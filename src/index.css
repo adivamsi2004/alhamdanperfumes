@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #FAF5EA;
+  color: #2A1F16;
+  scroll-behavior: smooth;
+}
+
+.font-heading {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.font-body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Elegant Arabian Lattice geometric tile background pattern */
+.bg-lattice {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 0 L40 20 L20 40 L0 20 Z M0 0 L20 20 L0 40 Z M40 0 L20 20 L40 40 Z' fill='none' stroke='%23C9A24B' stroke-width='0.75' stroke-opacity='0.15'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* Accessible focus outline */
+.focus-ring:focus-visible {
+  outline: 2px solid #C9A24B;
+  outline-offset: 2px;
+}
+
+/* Smooth transition defaults */
+.transition-luxury {
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Pulse animation respecting user preferences */
+@media (prefers-reduced-motion: no-preference) {
+  .pulse-gentle {
+    animation: gentle-pulse 2s infinite;
+  }
+  
+  .float-slow {
+    animation: float-slow 4s ease-in-out infinite;
+  }
+  
+  .float-slow-delayed {
+    animation: float-slow 4s ease-in-out infinite;
+    animation-delay: 1.5s;
+  }
+  
+  .float-slow-delayed-more {
+    animation: float-slow 4s ease-in-out infinite;
+    animation-delay: 3s;
+  }
+}
+
+@keyframes gentle-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
